@@ -4,22 +4,30 @@ export const menuCategories = [
   {
     id: 'naan-burgers',
     label: 'Les Naan Burgers',
-    description: 'Pain Naan cuit au four Tandoor minute'
+    description: 'Pain Naan cuit au four Tandoor minute',
+    shortLabel: 'Naan Burgers',
+    shortDescription: 'Pain Naan minute'
   },
   {
     id: 'buns-gratines',
     label: 'Nos Bun\'s Gratinés',
-    description: 'Spécialités d\'hiver gratinées au four'
+    description: 'Spécialités d\'hiver gratinées au four',
+    shortLabel: 'Bun\'s Gratinés',
+    shortDescription: 'Gratinés au four'
   },
   {
     id: 'french-tacos',
     label: 'French Tacos',
-    description: 'Sauce fromagère maison & gratiné inclus'
+    description: 'Sauce fromagère maison & gratiné inclus',
+    shortLabel: 'Tacos',
+    shortDescription: 'Sauce fromage incluse'
   },
   {
     id: 'finger-food',
     label: 'Finger Food',
-    description: 'Pour accompagner votre repas'
+    description: 'Pour accompagner votre repas',
+    shortLabel: 'Finger Food',
+    shortDescription: 'Pour accompagner'
   }
 ];
 

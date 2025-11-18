@@ -43,16 +43,26 @@ const Menu = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 gap-4 bg-transparent h-auto mb-12">
+            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 bg-transparent h-auto mb-12">
               {menuCategories.map((category, index) => (
                 <TabsTrigger
                   key={category.id}
                   value={category.id}
-                  className="bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 data-[state=active]:bg-amber-500 data-[state=active]:text-slate-900 data-[state=active]:border-amber-500 text-white py-4 px-6 rounded-xl transition-all duration-300 hover:scale-105 data-[state=active]:shadow-lg data-[state=active]:shadow-amber-500/50"
+                  className="bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 data-[state=active]:bg-amber-500 data-[state=active]:text-slate-900 data-[state=active]:border-amber-500 text-white py-3 sm:py-4 px-3 sm:px-6 rounded-xl transition-all duration-300 hover:scale-105 data-[state=active]:shadow-lg data-[state=active]:shadow-amber-500/50 text-left flex flex-col"
                 >
-                  <div className="text-left">
-                    <div className="font-bold text-base">{category.label}</div>
-                    <div className="text-xs opacity-80 mt-1">{category.description}</div>
+                  <div className="leading-tight">
+                    <div className="font-semibold text-[12px] xs:text-sm sm:text-base break-words">
+                      <span className="sm:hidden">
+                        {category.shortLabel || category.label}
+                      </span>
+                      <span className="hidden sm:inline">{category.label}</span>
+                    </div>
+                    <div className="mt-1 text-[10px] xs:text-[11px] sm:text-xs opacity-75 break-words">
+                      <span className="sm:hidden">
+                        {category.shortDescription || ''}
+                      </span>
+                      <span className="hidden sm:inline">{category.description}</span>
+                    </div>
                   </div>
                 </TabsTrigger>
               ))}
