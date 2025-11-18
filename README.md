@@ -40,20 +40,27 @@ This project is configured for deployment on Vercel. Follow these steps:
    ```
 
 2. **Deploy via Vercel Dashboard**:
-   - Push your code to GitHub
-   - Go to [vercel.com](https://vercel.com)
-   - Import your GitHub repository
-   - Vercel will automatically detect the configuration from `vercel.json`
-   - Add the required environment variables in Vercel dashboard:
+    - Push your code to GitHub
+    - Go to [vercel.com](https://vercel.com)
+    - Import your GitHub repository
+    - When asked for Root Directory, select `frontend/` (important)
+    - Vercel will use the configuration from `vercel.json` (which assumes the project root is `frontend/`)
+    - Add the required environment variables in Vercel dashboard:
      - `MONGO_URL`: Your MongoDB connection string
      - `DB_NAME`: Your database name
      - `CORS_ORIGINS`: Allowed CORS origins (comma-separated)
-     - `REACT_APP_API_URL`: Your API URL (will be auto-set by Vercel)
+       - `REACT_APP_API_URL`: Your API URL (will be auto-set by Vercel)
 
 3. **Deploy via CLI**:
    ```bash
    vercel
    ```
+
+### Notes about monorepo and Vercel
+
+- The repository contains both `frontend/` (React app) and `backend/` (FastAPI). The Vercel deployment targets only the `frontend/` directory.
+- The `vercel.json` is configured to run `yarn install` and a static build from the `frontend/` directory (Create React App), outputting to `build/`.
+- If you ever prefer to set the Vercel Project Root Directory to the repository root instead of `frontend/`, revert `vercel.json` to reference `frontend/package.json` and set `installCommand` to `cd frontend && yarn install`.
 
 ### Environment Variables
 
