@@ -7,18 +7,22 @@ import Menu from './components/Menu';
 import Location from './components/Location';
 import Order from './components/Order';
 import Footer from './components/Footer';
+import YonYaLabsSplash from './components/YonYaLabsSplash';
 
 function App() {
   return (
-    <div className="App min-h-screen bg-slate-950">
-      <Header />
-      <Hero />
-      <Concept />
-      <Menu />
-      <Order />
-      <Location />
-      <Footer />
-    </div>
+    <>
+      <YonYaLabsSplash />
+      <div className="App min-h-screen bg-slate-950">
+        <Header />
+        <Hero />
+        <Concept />
+        <Menu />
+        <Order />
+        <Location />
+        <Footer />
+      </div>
+    </>
   );
 }
 
